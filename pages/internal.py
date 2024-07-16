@@ -399,7 +399,6 @@ add_report_modal = dbc.Modal([
 reports_grid = dag.AgGrid(
     id = "id_internal_reports_table",
     columnDefs = cols,
-    rowData = [], #Initialize to empty list of records
     columnSize = "sizeToFit",
     defaultColDef = {"editable": False, "filter": True, "resizable": True},
     dashGridOptions = {
