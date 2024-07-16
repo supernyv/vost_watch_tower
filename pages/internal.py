@@ -17,7 +17,7 @@ register_page(__name__)
 
 #_________________________________________Utilities___________________________________________#
 
-decisions = ["Demoted", "Removed", "No Action"]
+decisions = ["Waiting for Decision", "Demoted", "Removed", "No Action"]
 appeal = ["Yes", "No"]
 
 UNIX_EPOCH_DATE = '1970-01-01'
@@ -190,7 +190,7 @@ add_report_inputs = dbc.Row([
                 options = [
                 {"label": value, "value":value} for value in decisions
                 ],
-                value = "",
+                value = "Waiting for Decision",
                 id = "id_add_decision",
                 placeholder = "Select Platform Decision"
                 )
