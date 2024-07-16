@@ -20,6 +20,9 @@ register_page(__name__)
 decisions = ["Demoted", "Removed", "No Action"]
 appeal = ["Yes", "No"]
 
+UNIX_EPOCH_DATE = '1970-01-01'
+DATE_NOW = datetime.now().date()
+
 def match_url(content_url): #To be replaced with a request call and placed in utils module for all
     url_criteria = r"^[a-zA-Z0-9:/.]+\.[a-z]{2,3}$"
     if content_url:
@@ -174,8 +177,8 @@ add_report_inputs = dbc.Row([
             dmc.DatePicker(
                 id= "id_add_close_report_date",
                 placeholder = "Pick a Date",
-                minDate = datetime.now().date(),
-                maxDate = datetime.now().date(),
+                minDate = UNIX_EPOCH_DATE,
+                maxDate = DATE_NOW,
                 clearable = True,
                 ),
             ],
@@ -290,7 +293,7 @@ update_report_inputs = dbc.Row([
             dmc.DatePicker(
                 id= "id_update_close_report_date",
                 placeholder = "Pick a Date",
-                maxDate = datetime.now().date(),
+                maxDate = DATE_NOW,
                 clearable = True,
                 ),
             ],
